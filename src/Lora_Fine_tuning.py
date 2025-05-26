@@ -14,7 +14,7 @@ model = AutoModelForCausalLM.from_pretrained(
     MODEL_NAME,
     trust_remote_code=True,
     device_map="auto",
-    load_in_8bit=True  # 省記憶體
+    torch_dtype=torch.float16  # 用半精度
 )
 
 # === 加入 LoRA 配置 ===
